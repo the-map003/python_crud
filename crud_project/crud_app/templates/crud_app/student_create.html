@@ -1,0 +1,49 @@
+{% extends "crud_app/base.html" %}
+
+{% block title %}Register Student — Insert new record{% endblock %}
+
+{% block content %}
+<div class="card">
+    <div class="toolbar">
+        <div>
+            <h2>Register Student</h2>
+            <p class="note">Insert a new student record. Enter the details below.</p>
+        </div>
+        <a class="btn secondary" href="{% url 'student_list' %}">Back to List</a>
+    </div>
+
+    <form method="post" action="">
+        {% csrf_token %}
+
+        <div class="field">
+            <label for="id_first_name">First name</label>
+            <input type="text" id="id_first_name" name="first_name" placeholder="First name" maxlength="100" />
+        </div>
+
+        <div class="field">
+            <label for="id_last_name">Last name</label>
+            <input type="text" id="id_last_name" name="last_name" placeholder="Last name" maxlength="100" />
+        </div>
+
+        <div class="field">
+            <label for="id_email">Email</label>
+            <input type="email" id="id_email" name="email" placeholder="email@example.com" />
+        </div>
+
+        <div class="field">
+            <label for="id_registration_number">Registration number</label>
+            <input type="text" id="id_registration_number" name="registration_number" placeholder="e.g. REG-2026-001" maxlength="30" />
+        </div>
+
+        <div class="field">
+            <label for="id_course">Course</label>
+            <input type="text" id="id_course" name="course" placeholder="Course name" maxlength="120" />
+        </div>
+
+        <div class="form-actions">
+            <button class="btn" type="submit">Save</button>
+            <a class="btn secondary" href="{% url 'student_list' %}">Cancel</a>
+        </div>
+    </form>
+</div>
+{% endblock %}

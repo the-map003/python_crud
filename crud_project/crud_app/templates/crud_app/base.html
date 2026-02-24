@@ -154,6 +154,12 @@
             font-size: 0.95rem;
         }
 
+        .error {
+            color: #b91c1c;
+            font-size: 0.9rem;
+            margin-top: 4px;
+        }
+
         @keyframes fade-up {
             from {
                 opacity: 0;
@@ -175,8 +181,8 @@
 </head>
 <body>
     <header>
-        <h1>Student Registration</h1>
-        <p>Track entries, edit details, and keep the roster tidy.</p>
+        <h1>{{ page_heading}}</h1>
+        <p>{{ page_subtitle}}</p>
     </header>
     <main>
         {% block content %}{% endblock %}

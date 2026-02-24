@@ -1,13 +1,13 @@
 {% extends "crud_app/base.html" %}
 
-{% block title %}Students{% endblock %}
+{% block title %}Student List — View All Records{% endblock %}
 
 {% block content %}
 <div class="card">
     <div class="toolbar">
         <div>
             <h2>Registered Students</h2>
-            <p class="note">Total: {{ students|length }}</p>
+            <p class="note">View all student records. You can edit or remove any entry from here. Total: {{ students|length }}</p>
         </div>
         <a class="btn" href="{% url 'student_create' %}">New Registration</a>
     </div>

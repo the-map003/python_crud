@@ -1,0 +1,49 @@
+{% extends "crud_app/base.html" %}
+
+{% block title %}Update Student — Edit record{% endblock %}
+
+{% block content %}
+<div class="card">
+    <div class="toolbar">
+        <div>
+            <h2>Update Student</h2>
+            <p class="note">Edit an existing student record. Change the details below.</p>
+        </div>
+        <a class="btn secondary" href="{% url 'student_list' %}">Back to List</a>
+    </div>
+
+    <form method="post" action="">
+        {% csrf_token %}
+
+        <div class="field">
+            <label for="id_first_name">First name</label>
+            <input type="text" id="id_first_name" name="first_name" value="{{ student.first_name }}" maxlength="100" />
+        </div>
+
+        <div class="field">
+            <label for="id_last_name">Last name</label>
+            <input type="text" id="id_last_name" name="last_name" value="{{ student.last_name }}" maxlength="100" />
+        </div>
+
+        <div class="field">
+            <label for="id_email">Email</label>
+            <input type="email" id="id_email" name="email" value="{{ student.email }}" />
+        </div>
+
+        <div class="field">
+            <label for="id_registration_number">Registration number</label>
+            <input type="text" id="id_registration_number" name="registration_number" value="{{ student.registration_number }}" maxlength="30" />
+        </div>
+
+        <div class="field">
+            <label for="id_course">Course</label>
+            <input type="text" id="id_course" name="course" value="{{ student.course }}" maxlength="120" />
+        </div>
+
+        <div class="form-actions">
+            <button class="btn" type="submit">Save</button>
+            <a class="btn secondary" href="{% url 'student_list' %}">Cancel</a>
+        </div>
+    </form>
+</div>
+{% endblock %}
